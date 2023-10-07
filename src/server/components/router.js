@@ -1,5 +1,5 @@
 import React from "react";
-import { RCC } from "rsc-module/server";
+import { RCC } from "../../../rsc-module/server/index.js";
 import Greeting from "./greeting.js";
 
 export default async function Router({ componentName, props }) {

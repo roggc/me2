@@ -41,6 +41,7 @@
     "rollup": "^3.29.4",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rsc-module": "^3.0.1",
+    "serverless-http": "^3.2.0",
     "styled-components": "^6.0.8"
   },
   "devDependencies": {

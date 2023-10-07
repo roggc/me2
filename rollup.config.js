@@ -8,23 +8,51 @@ import { globby } from "globby";
 import alias from "@rollup/plugin-alias";
 import image from "@rollup/plugin-image";
 
+const netlifyEntries = {
+  "netlify/functions/app": "netlify/functions/app.js",
+};
+
 export default [
-  // {
-  //   input: "rsc/client/components/rsc.js",
-  //   output: {
-  //     format: "es",
-  //     file: "rsc-dist/client.js",
-  //   },
-  //   plugins: [babel({ babelHelpers: "bundled", exclude: "node_modules/**" })],
-  // },
-  // {
-  //   input: "rsc/server/index.js",
-  //   output: {
-  //     format: "es",
-  //     file: "rsc-dist/server.js",
-  //   },
-  //   plugins: [babel({ babelHelpers: "bundled", exclude: "node_modules/**" })],
-  // },
+  {
+    input: {
+      "netlify/functions/app": "netlify/functions/app.js",
+    },
+    // input: (await globby("src/client/**/*.js")).reduce(
+    //   (acc, entryFile) => ({
+    //     ...acc,
+    //     [entryFile.replace(".js", "")]: entryFile,
+    //   }),
+    //   netlifyEntries
+    // ),
+    output: {
+      dir: "distnetlify",
+      format: "esm",
+      preserveModules: true,
+      entryFileNames: "[name].mjs",
+    },
+    plugins: [
+      babel({ babelHelpers: "bundled", exclude: "node_modules/**" }),
+      alias({
+        entries: [
+          {
+            find: "styled-components",
+            replacement:
+              "node_modules/styled-components/dist/styled-components.esm.js",
+          },
+        ],
+      }),
+      // peerDepsExternal(),
+      // nodeResolve({
+      //   resolveOnly: (module) => !module.includes("react-markdown"),
+      // }),
+      // commonjs(),
+      // json(),
+      // replace({
+      //   "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV),
+      // }),
+      image(),
+    ],
+  },
   {
     input: {
       index: "src/server/index.js",
