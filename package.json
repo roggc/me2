@@ -36,6 +36,8 @@
     "react": "^18.2.0",
     "react-context-slices": "^9.2.4",
     "react-dom": "^18.2.0",
+    "react-markdown": "^9.0.0",
+    "react-syntax-highlighter": "^15.5.0",
     "rollup": "^3.29.4",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rsc-module": "^3.0.1",

@@ -1,90 +1,56 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
-import imgReact from "../assets/react.png";
-import Image from "./image";
-import { RSC } from "rsc-module/client";
-import { useSlice } from "../slices";
+import RM from "./react-markdown";
 
 export default function App() {
-  const [count, setCount] = useState(0);
-  const [count1, setCount1] = useSlice("count1");
-  const [count2, reduxDispatch, { increment }] = useSlice("count2");
-
   return (
-    <Container>
-      <Title>RSC</Title>
-      <Image src={imgReact} maxWidth="600px" borderRadius="10px" />
-      <Div>
-        {" "}
-        <button onClick={() => setCount((c) => c + 1)}>
-          get Greeting of the Day (from server)
-        </button>
-        {count > 0 && (
-          <RSC componentName="greeting" key={count}>
-            loading greeting ...
-          </RSC>
-        )}
-      </Div>
-      <Counters>
-        <div>
-          <button onClick={() => setCount1((c) => c + 1)}>+</button>
-          {count1}
-        </div>
-        <div>
-          <button onClick={() => reduxDispatch(increment())}>+</button>
-          {count2}
-        </div>
-      </Counters>
-      <Div>
-        This is a setup for RSC (React Server Components) development, without
-        SSR (Server Side Rendering).
-      </Div>
-      <Div>
-        Another setup for RSC development with SSR can be found{" "}
-        <a href="https://github.com/roggc/rsc-ssr" target="_blank">
-          here
-        </a>
-      </Div>
-      <Div>
-        It has included{" "}
-        <a href="https://styled-components.com/" target="_blank">
-          styled-components
-        </a>{" "}
-        and{" "}
-        <a href="https://react-context-slices.github.io/" target="_blank">
-          react-context-slices
-        </a>
-        , a library to manage state that seamlessly integrates both Redux and
-        React Context with zero-boilerplate
-      </Div>
-      <Div>
-        With this setup you can build SPA's with secret keys to fetch an API
-        hidden from the Client (browser) or fetch some database in the server
-        with Prisma.
-      </Div>
-    </Container>
+    <Card>
+      <Container>
+        <RM>My name is `Roger Gomez Castells (roggc)`.</RM>
+        <RM>
+          I am a `Fullstack React Developer`, meaning I am able to develop
+          `React` on the server with `React Server Components (RSC)`.
+        </RM>
+        <RM>
+          I have developed an implementation of `React Server Components (RSC)`.
+          Can be used with `npx create-rsc-app@latest my-app` for the setup
+          without `SSR (Server Side Rendering)` and with `npx
+          create-rsc-app@latest my-app --ssr` for the setup with `SSR`.
+        </RM>
+        <RM>
+          I love `React` and web development in general. I have also experience
+          with `React Native` (I've developed and published an app with it named
+          `mygroupsapp`).
+        </RM>
+        <RM>
+          I have also developed a library for state management in `React` (and
+          `React Native`) named `react-context-slices`. It seamlessly integrates
+          both `Redux` and `React Context` with zero-boilerplate. I've made a
+          dedicated site to it: click
+          [here](https://react-context-slices.github.io) to see.
+        </RM>
+        <RM>
+          I have also made a dedicated site for `The RSC Setup` I've made, can
+          be seen [here](https://rsc-setup.netlify.app).
+        </RM>
+        <RM>Check my [github](https://github.com/roggc) for more info.</RM>
+      </Container>
+    </Card>
   );
 }
 
-const Div = styled.div`
-  text-align: center;
-`;
-
-const Title = styled(Div)`
-  font-size: 2rem;
-  font-weight: 700;
-`;
-
 const Container = styled.div`
   font-family: sans-serif;
-  height: 97vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
 `;
 
-const Counters = styled.div`
-  display: flex;
-  gap: 10px;
+const C = styled.div`
+  border-radius: 10px;
+  background-color: #f9f6ee;
+  box-shadow: 0 0 1px 1px;
+  padding: 10px;
+  display: inline-flex;
+`;
+
+const Card = styled(C)`
+  --max-width: 600px;
 `;
