@@ -39,6 +39,7 @@
     "react-markdown": "^9.0.0",
     "react-syntax-highlighter": "^15.5.0",
     "rollup": "^3.29.4",
+    "rollup-plugin-delete": "^2.0.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rsc-module": "^3.0.1",
     "serverless-http": "^3.2.0",

@@ -7,6 +7,7 @@ import replace from "@rollup/plugin-replace";
 import { globby } from "globby";
 import alias from "@rollup/plugin-alias";
 import image from "@rollup/plugin-image";
+import del from "rollup-plugin-delete";
 
 const netlifyEntries = {
   "netlify/functions/app": "netlify/functions/app.js",
@@ -100,10 +101,11 @@ export default [
       json(),
       replace({
         "process.env.NODE_ENV": process.env.IS_NETLIFY
-          ? JSON.stringify("development")
+          ? JSON.stringify("production")
           : JSON.stringify("development"),
       }),
       image(),
+      del({ targets: "public/*" }),
     ],
     onwarn: function (warning, handler) {
       // Skip certain warnings
