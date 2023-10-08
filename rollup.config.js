@@ -77,7 +77,7 @@ export default [
       ),
     output: {
       dir: "public",
-      format: "es",
+      format: "esm",
       entryFileNames: "[name].js",
       preserveModules: true,
     },
