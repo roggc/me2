@@ -100,7 +100,7 @@ export default [
       json(),
       replace({
         "process.env.NODE_ENV": process.env.IS_NETLIFY
-          ? JSON.stringify("production")
+          ? JSON.stringify("development")
           : JSON.stringify("development"),
       }),
       image(),
