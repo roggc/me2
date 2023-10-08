@@ -5,6 +5,11 @@ export default function HTML() {
     <html>
       <head>
         <title>My App</title>
+        <style
+          dangerouslySetInnerHTML={{
+            __html: "code{background:unset !important;}",
+          }}
+        />
       </head>
       <body>
         <div id="app"></div>

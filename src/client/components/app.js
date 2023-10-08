@@ -27,13 +27,13 @@ export default function App() {
           `React Native`) named `react-context-slices`. It seamlessly integrates
           both `Redux` and `React Context` with zero-boilerplate. I've made a
           dedicated site to it: click
-          [here](https://react-context-slices.github.io) to see.
+          **[here](https://react-context-slices.github.io)** to see.
         </RM>
         <RM>
           I have also made a dedicated site for `The RSC Setup` I've made, can
-          be seen [here](https://rsc-setup.netlify.app).
+          be seen **[here](https://rsc-setup.netlify.app)**.
         </RM>
-        <RM>Check my [github](https://github.com/roggc) for more info.</RM>
+        <RM>Check my **[github](https://github.com/roggc)** for more info.</RM>
       </Container>
     </Card>
   );
