@@ -33,7 +33,7 @@ export default function App() {
           I have also made a dedicated site for `The RSC Setup` I've made, can
           be seen **[here](https://rsc-setup.netlify.app)**.
         </RM>
-        <RM>Check my **[github](https://github.com/roggc)** for more info.</RM>
+        <RM>Check my **[github](https://github.com/roggc)** for more info. </RM>
       </Container>
     </Card>
   );
